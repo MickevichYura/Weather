@@ -11,8 +11,16 @@
     android:paddingTop="@dimen/activity_vertical_margin"
     tools:context="mickevichyura.github.com.weather.MainActivity">
 
-    <TextView
+    <Button
+        android:id="@+id/buttonGetWeather"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Hello World!"/>
+        android:text="Get Weather"/>
+
+    <TextView
+        android:id="@+id/textWeather"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Get Weather"
+        android:layout_below="@+id/buttonGetWeather"/>
 </RelativeLayout>
