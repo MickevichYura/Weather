@@ -6,13 +6,13 @@ import org.simpleframework.xml.Root;
 @Root(name="precipitation")
 public class Precipitation
 {
-    @Attribute
+    @Attribute(name="unit", required = false)
     private String unit;
 
-    @Attribute
+    @Attribute(name="value", required = false)
     private String value;
 
-    @Attribute
+    @Attribute(name="mode", required = false)
     private String mode;
 
     public String getUnit ()

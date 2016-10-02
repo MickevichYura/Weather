@@ -37,4 +37,8 @@ public class WeatherService extends Service {
     public void getWeather(String name, String mode, String apiKey, Callback callback) throws IOException {
         service.getWeather(name, mode, apiKey).enqueue(callback);
     }
+
+    public void getForecast(String name, String mode, String apiKey, Callback callback) throws IOException {
+        service.getForecast(name, mode, apiKey).enqueue(callback);
+    }
 }

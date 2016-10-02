@@ -3,10 +3,10 @@ package mickevichyura.github.com.weather.model;
 import org.simpleframework.xml.Attribute;
 import org.simpleframework.xml.Root;
 
-@Root(name="clouds")
+@Root(name="clouds", strict = false)
 public class Clouds
 {
-    @Attribute
+    @Attribute(name = "all", required = false)
     private String name;
 
     @Attribute

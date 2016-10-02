@@ -11,16 +11,16 @@
     android:paddingTop="@dimen/activity_vertical_margin"
     tools:context="mickevichyura.github.com.weather.MainActivity">
 
-    <Button
-        android:id="@+id/buttonGetWeather"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Get Weather"/>
-
     <TextView
         android:id="@+id/textWeather"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Get Weather"
-        android:layout_below="@+id/buttonGetWeather"/>
+        android:text="@string/small_text"/>
+
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/weather_recycler_view"
+        android:scrollbars="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/textWeather"/>
 </RelativeLayout>
