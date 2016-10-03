@@ -5,10 +5,14 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
+import com.squareup.picasso.Picasso;
+
 import java.util.List;
 
 import mickevichyura.github.com.weather.R;
 import mickevichyura.github.com.weather.model.TimeInterval;
+
+import static mickevichyura.github.com.weather.utils.WeatherApi.BASE_URL;
 
 public class WeatherAdapter extends RecyclerView.Adapter<WeatherCardViewHolder> {
 
@@ -29,7 +33,14 @@ public class WeatherAdapter extends RecyclerView.Adapter<WeatherCardViewHolder> 
     @Override
     public void onBindViewHolder(WeatherCardViewHolder holder, int position) {
         holder.mTextView.setText(mTimeInterval.get(position).getTemperature().getValue());
-        holder.mImageView.setImageResource(R.drawable.i10d);
+//        holder.mImageView.setImageResource(R.drawable.i10d);
+        String url = BASE_URL + "/img/w/" + mTimeInterval.get(position).getSymbol().getVar() + ".png";
+        Picasso.with(holder.mImageView.getContext())
+                .load(url)
+                .noPlaceholder()
+                .error(R.drawable.i10d)
+                .resize(50, 50)
+                .into(holder.mImageView);
     }
 
     @Override

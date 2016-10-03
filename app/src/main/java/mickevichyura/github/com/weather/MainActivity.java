@@ -11,6 +11,7 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 
+import mickevichyura.github.com.weather.adapter.GridSpacingItemDecoration;
 import mickevichyura.github.com.weather.adapter.WeatherAdapter;
 import mickevichyura.github.com.weather.model.TimeInterval;
 import mickevichyura.github.com.weather.model.WeatherData;
@@ -35,14 +36,17 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
         mTextView = (TextView) findViewById(R.id.textWeather);
         mWeatherService = new WeatherService();
+        mTimeIntervals = new ArrayList<>();
 
         mRecyclerView = (RecyclerView) findViewById(R.id.weather_recycler_view);
-
         mRecyclerView.setHasFixedSize(true);
-        mLayoutManager = new GridLayoutManager(this, 5);
-        mRecyclerView.setLayoutManager(mLayoutManager);
 
-        mTimeIntervals = new ArrayList<>();
+        int spanCount = 5;
+        int spacing = 50;
+        boolean includeEdge = false;
+        mLayoutManager = new GridLayoutManager(this, spanCount);
+        mRecyclerView.setLayoutManager(mLayoutManager);
+        mRecyclerView.addItemDecoration(new GridSpacingItemDecoration(spanCount, spacing, includeEdge));
 
         mAdapter = new WeatherAdapter(mTimeIntervals);
         mRecyclerView.setAdapter(mAdapter);

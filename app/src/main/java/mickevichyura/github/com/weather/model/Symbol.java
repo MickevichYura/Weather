@@ -3,10 +3,12 @@ package mickevichyura.github.com.weather.model;
 import org.simpleframework.xml.Attribute;
 import org.simpleframework.xml.Root;
 
-@Root(name = "symbol", strict = false)
-public class Symbol {
+import java.io.Serializable;
 
-    @Attribute(name = "var", required = false)
+@Root(name = "symbol", strict = false)
+public class Symbol implements Serializable {
+
+    @Attribute(name = "var")
     private String var;
 
     @Attribute(name = "name", required = false)

@@ -21,6 +21,9 @@ public class TimeInterval implements Serializable {
     @Element(name = "temperature")
     private Temperature temperature;
 
+    @Element(name = "symbol")
+    private Symbol symbol;
+
     public String getFrom() {
         return from;
     }
@@ -35,6 +38,10 @@ public class TimeInterval implements Serializable {
 
     public Temperature getTemperature() {
         return temperature;
+    }
+
+    public Symbol getSymbol() {
+        return symbol;
     }
 
 }
