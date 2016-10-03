@@ -3,9 +3,8 @@ package mickevichyura.github.com.weather.model;
 import org.simpleframework.xml.Attribute;
 import org.simpleframework.xml.Root;
 
-@Root(name="weather")
-public class Weather
-{
+@Root(name = "weather")
+public class Weather {
     @Attribute
     private String icon;
 
@@ -15,25 +14,21 @@ public class Weather
     @Attribute
     private String number;
 
-    public String getIcon ()
-    {
+    public String getIcon() {
         return icon;
     }
 
-    public String getValue ()
-    {
+    public String getValue() {
         return value;
     }
 
-    public String getNumber ()
-    {
+    public String getNumber() {
         return number;
     }
 
     @Override
-    public String toString()
-    {
-        return " [icon = "+icon+", value = "+value+", number = "+number+"]";
+    public String toString() {
+        return " [icon = " + icon + ", value = " + value + ", number = " + number + "]";
     }
 }
 

@@ -12,8 +12,7 @@ public class WeatherData {
     @Element
     private Forecast forecast;
 
-    public Sun getSun ()
-    {
+    public Sun getSun() {
         return sun;
     }
 

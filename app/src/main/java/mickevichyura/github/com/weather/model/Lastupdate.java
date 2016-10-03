@@ -1,17 +1,14 @@
 package mickevichyura.github.com.weather.model;
 
-public class Lastupdate
-{
+public class Lastupdate {
     private String value;
 
-    public String getValue ()
-    {
+    public String getValue() {
         return value;
     }
 
     @Override
-    public String toString()
-    {
-        return " [value = "+value+"]";
+    public String toString() {
+        return " [value = " + value + "]";
     }
 }

@@ -3,7 +3,7 @@ package mickevichyura.github.com.weather.model;
 import org.simpleframework.xml.Attribute;
 import org.simpleframework.xml.Root;
 
-@Root(name="sun")
+@Root(name = "sun")
 public class Sun {
 
     @Attribute

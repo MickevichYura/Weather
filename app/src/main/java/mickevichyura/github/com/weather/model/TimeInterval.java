@@ -4,8 +4,10 @@ import org.simpleframework.xml.Attribute;
 import org.simpleframework.xml.Element;
 import org.simpleframework.xml.Root;
 
+import java.io.Serializable;
+
 @Root(name = "time", strict = false)
-public class TimeInterval {
+public class TimeInterval implements Serializable {
 
     @Attribute
     private String from;
@@ -19,18 +21,15 @@ public class TimeInterval {
     @Element(name = "temperature")
     private Temperature temperature;
 
-    public String getFrom ()
-    {
+    public String getFrom() {
         return from;
     }
 
-    public String getTo ()
-    {
+    public String getTo() {
         return to;
     }
 
-    public Pressure getPressure ()
-    {
+    public Pressure getPressure() {
         return pressure;
     }
 

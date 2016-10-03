@@ -46,7 +46,26 @@ public class MainActivity extends AppCompatActivity {
 
         mAdapter = new WeatherAdapter(mTimeIntervals);
         mRecyclerView.setAdapter(mAdapter);
-        getForecast();
+
+        if (savedInstanceState != null) {
+            for (int i = 0; i < savedInstanceState.getInt("timeIntervalSize"); i++) {
+                mTimeIntervals.add((TimeInterval) savedInstanceState.getSerializable("timeInterval" + i));
+                mAdapter.notifyItemInserted(i);
+            }
+        }
+        else{
+            getForecast();
+        }
+
+    }
+
+    @Override
+    public void onSaveInstanceState(Bundle outState) {
+        super.onSaveInstanceState(outState);
+        for (int i = 0; i < mTimeIntervals.size(); i++) {
+            outState.putSerializable("timeInterval" + i, mTimeIntervals.get(i));
+        }
+        outState.putInt("timeIntervalSize", mTimeIntervals.size());
     }
 
     private void getForecast() {

@@ -3,7 +3,7 @@ package mickevichyura.github.com.weather.model;
 import org.simpleframework.xml.Attribute;
 import org.simpleframework.xml.Root;
 
-@Root(name="direction")
+@Root(name = "direction")
 public class Direction {
     @Attribute
     private String name;

@@ -2,7 +2,9 @@ package mickevichyura.github.com.weather.model;
 
 import org.simpleframework.xml.Attribute;
 
-public class Pressure {
+import java.io.Serializable;
+
+public class Pressure implements Serializable {
     @Attribute
     private String unit;
 

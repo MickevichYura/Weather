@@ -2,27 +2,23 @@ package mickevichyura.github.com.weather.model;
 
 import org.simpleframework.xml.Attribute;
 
-public class Coord
-{
+public class Coord {
     @Attribute()
     private String lon;
 
     @Attribute(required = true)
     private String lat;
 
-    public String getLon ()
-    {
+    public String getLon() {
         return lon;
     }
 
-    public String getLat ()
-    {
+    public String getLat() {
         return lat;
     }
 
     @Override
-    public String toString()
-    {
-        return " [lon = "+lon+", lat = "+lat+"]";
+    public String toString() {
+        return " [lon = " + lon + ", lat = " + lat + "]";
     }
 }
