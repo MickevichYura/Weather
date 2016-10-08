@@ -42,7 +42,7 @@ public class MainActivity extends AppCompatActivity {
         mRecyclerView.setHasFixedSize(true);
 
         int spanCount = 5;
-        int spacing = 50;
+        int spacing = 10;
         boolean includeEdge = false;
         mLayoutManager = new GridLayoutManager(this, spanCount);
         mRecyclerView.setLayoutManager(mLayoutManager);

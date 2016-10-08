@@ -1,8 +1,11 @@
 package mickevichyura.github.com.weather.model;
 
 import org.simpleframework.xml.Attribute;
+import org.simpleframework.xml.Root;
 
+@Root(name = "humidity")
 public class Humidity {
+
     @Attribute
     private String unit;
 
@@ -19,6 +22,6 @@ public class Humidity {
 
     @Override
     public String toString() {
-        return " [unit = " + unit + ", value = " + value + "]";
+        return value + unit;
     }
 }

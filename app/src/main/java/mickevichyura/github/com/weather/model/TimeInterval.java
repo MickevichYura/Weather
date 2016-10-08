@@ -24,6 +24,12 @@ public class TimeInterval implements Serializable {
     @Element(name = "symbol")
     private Symbol symbol;
 
+    @Element(name = "clouds")
+    private Clouds clouds;
+
+    @Element(name = "humidity")
+    private Humidity humidity;
+
     public String getFrom() {
         return from;
     }
@@ -42,6 +48,14 @@ public class TimeInterval implements Serializable {
 
     public Symbol getSymbol() {
         return symbol;
+    }
+
+    public Clouds getClouds() {
+        return clouds;
+    }
+
+    public Humidity getHumidity() {
+        return humidity;
     }
 
 }

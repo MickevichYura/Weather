@@ -32,8 +32,10 @@ public class WeatherAdapter extends RecyclerView.Adapter<WeatherCardViewHolder> 
 
     @Override
     public void onBindViewHolder(WeatherCardViewHolder holder, int position) {
-        holder.mTextView.setText(mTimeInterval.get(position).getTemperature().getValue());
-//        holder.mImageView.setImageResource(R.drawable.i10d);
+
+        holder.mTextView.setText(String.format(holder.mImageView.getContext().getString(R.string.degree),
+                mTimeInterval.get(position).getTemperature().getValue()));
+        holder.mTextViewCloudsValue.setText(mTimeInterval.get(position).getHumidity().toString());
         String url = BASE_URL + "/img/w/" + mTimeInterval.get(position).getSymbol().getVar() + ".png";
         Picasso.with(holder.mImageView.getContext())
                 .load(url)
