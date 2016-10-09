@@ -5,13 +5,12 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
-import com.squareup.picasso.Picasso;
-
 import java.text.ParseException;
 import java.util.Date;
 import java.util.List;
 
 import mickevichyura.github.com.weather.R;
+import mickevichyura.github.com.weather.imageloader.AsyncUploadImage;
 import mickevichyura.github.com.weather.model.TimeInterval;
 
 import static mickevichyura.github.com.weather.utils.DateFormat.DATE_FORMAT;
@@ -53,13 +52,15 @@ public class WeatherAdapter extends RecyclerView.Adapter<WeatherCardViewHolder> 
             e.printStackTrace();
         }
 
+        new AsyncUploadImage(holder.mImageView).execute(url);
 
-        Picasso.with(holder.mImageView.getContext())
-                .load(url)
-                .noPlaceholder()
-                .error(R.drawable.i10d)
-                .resize(50, 50)
-                .into(holder.mImageView);
+
+//        Picasso.with(holder.mImageView.getContext())
+//                .load(url)
+//                .noPlaceholder()
+//                .error(R.drawable.i10d)
+//                .resize(50, 50)
+//                .into(holder.mImageView);
     }
 
     @Override
