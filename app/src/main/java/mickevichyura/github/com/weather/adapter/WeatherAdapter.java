@@ -7,11 +7,16 @@ import android.view.ViewGroup;
 
 import com.squareup.picasso.Picasso;
 
+import java.text.ParseException;
+import java.util.Date;
 import java.util.List;
 
 import mickevichyura.github.com.weather.R;
 import mickevichyura.github.com.weather.model.TimeInterval;
 
+import static mickevichyura.github.com.weather.utils.DateFormat.DATE_FORMAT;
+import static mickevichyura.github.com.weather.utils.DateFormat.DATE_FROM_FORMAT;
+import static mickevichyura.github.com.weather.utils.DateFormat.DATE_TO_FORMAT;
 import static mickevichyura.github.com.weather.utils.WeatherApi.BASE_URL;
 
 public class WeatherAdapter extends RecyclerView.Adapter<WeatherCardViewHolder> {
@@ -37,6 +42,18 @@ public class WeatherAdapter extends RecyclerView.Adapter<WeatherCardViewHolder> 
                 mTimeInterval.get(position).getTemperature().getValue()));
         holder.mTextViewCloudsValue.setText(mTimeInterval.get(position).getHumidity().toString());
         String url = BASE_URL + "/img/w/" + mTimeInterval.get(position).getSymbol().getVar() + ".png";
+
+        try {
+            Date dateFrom = DATE_FORMAT.parse(mTimeInterval.get(position).getFrom());
+            Date dateTo = DATE_FORMAT.parse(mTimeInterval.get(position).getTo());
+            String text = DATE_FROM_FORMAT.format(dateFrom) + " - "  + DATE_TO_FORMAT.format(dateTo);
+            holder.mTextViewDateValue.setText(text);
+        } catch (ParseException e) {
+            holder.mTextViewDateValue.setText(mTimeInterval.get(position).toString());
+            e.printStackTrace();
+        }
+
+
         Picasso.with(holder.mImageView.getContext())
                 .load(url)
                 .noPlaceholder()

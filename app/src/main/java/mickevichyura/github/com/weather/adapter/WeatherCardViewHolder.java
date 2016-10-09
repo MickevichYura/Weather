@@ -9,14 +9,16 @@ import mickevichyura.github.com.weather.R;
 
 public class WeatherCardViewHolder extends RecyclerView.ViewHolder {
 
-    public TextView mTextView;
-    public TextView mTextViewCloudsValue;
-    public ImageView mImageView;
+    TextView mTextView;
+    TextView mTextViewCloudsValue;
+    TextView mTextViewDateValue;
+    ImageView mImageView;
 
     public WeatherCardViewHolder(View v) {
         super(v);
         mTextView = (TextView) v.findViewById(R.id.temperature);
         mTextViewCloudsValue = (TextView) v.findViewById(R.id.cloud_value);
+        mTextViewDateValue = (TextView) v.findViewById(R.id.date);
         mImageView = (ImageView) v.findViewById(R.id.cloud_icon);
     }
 }

@@ -3,8 +3,10 @@ package mickevichyura.github.com.weather.model;
 import org.simpleframework.xml.Attribute;
 import org.simpleframework.xml.Root;
 
+import java.io.Serializable;
+
 @Root(name = "humidity")
-public class Humidity {
+public class Humidity implements Serializable {
 
     @Attribute
     private String unit;

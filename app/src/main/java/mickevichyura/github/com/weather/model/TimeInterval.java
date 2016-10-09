@@ -9,10 +9,10 @@ import java.io.Serializable;
 @Root(name = "time", strict = false)
 public class TimeInterval implements Serializable {
 
-    @Attribute
+    @Attribute(name = "from")
     private String from;
 
-    @Attribute
+    @Attribute(name = "to")
     private String to;
 
     @Element
@@ -58,4 +58,8 @@ public class TimeInterval implements Serializable {
         return humidity;
     }
 
+    @Override
+    public String toString() {
+        return from;
+    }
 }
