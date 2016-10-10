@@ -47,7 +47,7 @@ public class MainActivity extends AppCompatActivity {
         mTextView.setText(String.valueOf(metrics.widthPixels));
 
         int spanCount = 4;
-        if(metrics.widthPixels < 800){
+        if(metrics.widthPixels < 1440){
             spanCount = 3;
         }
         mLayoutManager = new GridLayoutManager(this, spanCount);
@@ -87,7 +87,7 @@ public class MainActivity extends AppCompatActivity {
                 public void onResponse(Call call, Response response) {
                     WeatherData responseData = (WeatherData) response.body();
                     mTimeIntervals.addAll(responseData.getForecast().getTimeInterval());
-                    mAdapter.notifyItemRangeChanged(0, mTimeIntervals.size());
+                    mAdapter.notifyItemRangeInserted(0, mTimeIntervals.size());
                 }
 
                 @Override
